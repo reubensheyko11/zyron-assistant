@@ -64,7 +64,7 @@ if exist venv (
 )
 
 echo   [+] Creating new environment using Python 3.11...
-%PYTHON_CMD% -m venv venv
+%PYTHON_CMD% --m venv venv
 
 if errorlevel 1 (
     color 0C
@@ -78,7 +78,7 @@ echo.
 :: ===================== STEP 3 =====================
 echo   [3/6] Installing Libraries...
 call venv\Scripts\activate
-python -m pip install --upgrade pip --quiet
+python --m pip install --upgrade pip --quiet
 pip install -e .
 
 if errorlevel 1 (
